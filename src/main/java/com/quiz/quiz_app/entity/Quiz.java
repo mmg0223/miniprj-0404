@@ -15,11 +15,6 @@ public class Quiz {
     @Column(nullable = false)
     private String content;
 
-    @Builder
-    public Quiz(String content) {
-        this.content = content;
-    }
-
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Category category;
@@ -27,5 +22,12 @@ public class Quiz {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private AnswerType correctAnswer;
+
+    @Builder
+    public Quiz(String content, Category category, AnswerType correctAnswer) {
+        this.content = content;
+        this.category = category;
+        this.correctAnswer = correctAnswer;
+    }
 
 }

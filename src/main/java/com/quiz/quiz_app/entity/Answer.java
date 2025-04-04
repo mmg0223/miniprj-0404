@@ -13,7 +13,7 @@ public class Answer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private boolean correct;
+    private boolean isCorrect;
 
     // 사용자가 제출한 답
     @Enumerated(EnumType.STRING)
@@ -29,8 +29,8 @@ public class Answer {
     private Quiz quiz;
 
     @Builder
-    public Answer(boolean correct, AnswerType userAnswer, User user, Quiz quiz){
-        this.correct = correct;
+    public Answer(boolean isCorrect, AnswerType userAnswer, User user, Quiz quiz){
+        this.isCorrect = isCorrect;
         this.userAnswer = userAnswer;
         this.user = user;
         this.quiz = quiz;

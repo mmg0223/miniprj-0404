@@ -1,0 +1,30 @@
+package com.quiz.quiz_app.dto;
+
+import com.quiz.quiz_app.entity.User;
+import lombok.Builder;
+import lombok.Getter;
+
+@Getter
+@Builder
+public class UserDTO {
+    // 유저 생성과 조회에 동일하게 사용
+    private Long userId; // 유저 ID
+    private String username; // 닉네임
+    private int score; // 점수
+
+    public User toEntity() {
+        return  User.builder()
+                .username(username)
+                .score(score)
+                .build();
+    }
+
+    public static UserDTO from(User user){
+        return UserDTO.builder()
+                .userId(user.getId())
+                .username(user.getUsername())
+                .score(user.getScore())
+                .build();
+    }
+
+}
