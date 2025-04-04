@@ -2,12 +2,14 @@ package com.quiz.quiz_app.dto;
 
 import com.quiz.quiz_app.entity.Answer;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 
 import java.util.List;
 
-@AllArgsConstructor
+
 @Getter
+@Builder
 public class AnswerResultDTO {
     // 유저가 푼 전체 10문제의 최종 결과
     private int score; // 점수(맞춘 개수 x 10 예정)
