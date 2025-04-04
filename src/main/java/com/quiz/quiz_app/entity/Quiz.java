@@ -1,14 +1,9 @@
 package com.quiz.quiz_app.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
 public class Quiz {
@@ -17,16 +12,20 @@ public class Quiz {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String content;
 
+    @Builder
     public Quiz(String content) {
         this.content = content;
     }
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Category category;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private AnswerType correctAnswer;
 
 }
