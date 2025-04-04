@@ -1,4 +1,5 @@
 package com.quiz.quiz_app.entity;
 
-public class ScienceQuizEntity {
+public enum AnswerType {
+    O, X
 }
