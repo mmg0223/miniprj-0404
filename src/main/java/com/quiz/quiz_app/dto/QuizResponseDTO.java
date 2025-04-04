@@ -13,6 +13,7 @@ public class QuizResponseDTO {
     private String content; // 문제 내용
     private Category category; // 카테고리
 
+    // Quiz라는 Entity에서 DTO로 정보를 변환 후 가져오는 작업
     public static QuizResponseDTO from(Quiz quiz) {
         return QuizResponseDTO.builder()
                 .quizId(quiz.getId())

@@ -14,6 +14,7 @@ public class AnswerResultDTO {
     private int correctCount; // 맞춘 개수
     private List<AnswerDTO> answers; // AnswerDTO 리스트
 
+    // Answer라는 Entity에서 DTO로 정보를 변환 후 가져오는 작업
     public static AnswerResultDTO from(List<Answer> answerList) {
         int correctCount = (int) answerList.stream().filter(Answer::isCorrect).count();
 

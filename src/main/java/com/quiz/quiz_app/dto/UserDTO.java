@@ -12,6 +12,7 @@ public class UserDTO {
     private String username; // 닉네임
     private int score; // 점수
 
+    // UserDTO 값을 Entity로 변환 후 User DB에 저장하기 위한 작업
     public User toEntity() {
         return  User.builder()
                 .username(username)
@@ -19,6 +20,7 @@ public class UserDTO {
                 .build();
     }
 
+    // User라는 Entity에서 DTO로 정보를 변환 후 가져오는 작업
     public static UserDTO from(User user){
         return UserDTO.builder()
                 .userId(user.getId())

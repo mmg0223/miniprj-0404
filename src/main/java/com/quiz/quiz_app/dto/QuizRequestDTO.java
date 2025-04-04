@@ -12,6 +12,7 @@ public class QuizRequestDTO {
     private Category category; // 카테고리
     private AnswerType correctAnswer; // 정답
 
+    // QuizRequestDTO 값을 Entity로 변환 후 Quiz DB에 저장하기 위한 작업
     public Quiz toEntity(){
         return Quiz.builder()
                 .content(content)

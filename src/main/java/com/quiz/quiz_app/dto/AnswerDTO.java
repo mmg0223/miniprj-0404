@@ -14,6 +14,7 @@ public class AnswerDTO {
     private AnswerType userAnswer; // 유저가 고른 답
     private boolean isCorrect; // 정답 여부
 
+    // Answer라는 Entity에서 DTO로 정보를 변환 후 가져오는 작업
     public static AnswerDTO from(Answer answer){
         return AnswerDTO.builder()
                 .quizId(answer.getId())
